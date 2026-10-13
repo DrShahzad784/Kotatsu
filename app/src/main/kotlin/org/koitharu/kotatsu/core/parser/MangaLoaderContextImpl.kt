@@ -16,6 +16,7 @@ import org.koitharu.kotatsu.core.image.BitmapDecoderCompat
 import org.koitharu.kotatsu.core.network.MangaHttpClient
 import org.koitharu.kotatsu.core.network.cookies.MutableCookieJar
 import org.koitharu.kotatsu.core.network.webview.WebViewExecutor
+import org.koitharu.kotatsu.core.network.webview.WebViewRequestInterceptorExecutor
 import org.koitharu.kotatsu.core.prefs.SourceSettings
 import org.koitharu.kotatsu.core.util.ext.toList
 import org.koitharu.kotatsu.core.util.ext.toMimeType
@@ -27,6 +28,8 @@ import org.koitharu.kotatsu.parsers.config.MangaSourceConfig
 import org.koitharu.kotatsu.parsers.model.MangaSource
 import org.koitharu.kotatsu.parsers.network.UserAgents
 import org.koitharu.kotatsu.parsers.util.map
+import org.koitharu.kotatsu.parsers.webview.InterceptedRequest
+import org.koitharu.kotatsu.parsers.webview.InterceptionConfig as ParsersInterceptionConfig
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -38,15 +41,16 @@ class MangaLoaderContextImpl @Inject constructor(
 	override val cookieJar: MutableCookieJar,
 	@ApplicationContext private val androidContext: Context,
 	private val webViewExecutor: WebViewExecutor,
+	private val webViewRequestInterceptorExecutor: WebViewRequestInterceptorExecutor,
 ) : MangaLoaderContext() {
 
-	private val jsTimeout = TimeUnit.SECONDS.toMillis(4)
+	private val jsTimeout = TimeUnit.SECONDS.toMillis(10)
 
 	@Deprecated("Provide a base url")
 	@SuppressLint("SetJavaScriptEnabled")
-	override suspend fun evaluateJs(script: String): String? = evaluateJs("", script)
+	override suspend fun evaluateJs(script: String): String? = evaluateJs("", script, timeout = jsTimeout)
 
-	override suspend fun evaluateJs(baseUrl: String, script: String): String? = withTimeout(jsTimeout) {
+	override suspend fun evaluateJs(baseUrl: String, script: String, timeout: Long): String? = withTimeout(timeout) {
 		webViewExecutor.evaluateJs(baseUrl, script)
 	}
 
@@ -87,4 +91,59 @@ class MangaLoaderContextImpl @Inject constructor(
 	}
 
 	override fun createBitmap(width: Int, height: Int): Bitmap = BitmapWrapper.create(width, height)
+
+	override suspend fun interceptWebViewRequests(
+		url: String,
+		interceptorScript: String,
+		timeout: Long,
+	): List<InterceptedRequest> {
+		val config = org.koitharu.kotatsu.core.network.webview.InterceptionConfig(
+			timeoutMs = timeout,
+			maxRequests = 100,
+			filterScript = interceptorScript,
+		)
+
+		val captured = webViewRequestInterceptorExecutor.interceptRequests(url, config)
+		return captured.map { appRequest ->
+			InterceptedRequest(
+				url = appRequest.url,
+				method = appRequest.method,
+				headers = appRequest.headers,
+				timestamp = appRequest.timestamp,
+				body = appRequest.body,
+			)
+		}
+	}
+
+	override suspend fun interceptWebViewRequests(
+		url: String,
+		config: ParsersInterceptionConfig,
+	): List<InterceptedRequest> {
+		val appConfig = org.koitharu.kotatsu.core.network.webview.InterceptionConfig(
+			timeoutMs = config.timeoutMs,
+			maxRequests = config.maxRequests,
+			urlPattern = config.urlPattern,
+			filterScript = config.filterScript,
+			pageScript = config.pageScript,
+		)
+
+		val captured = webViewRequestInterceptorExecutor.interceptRequests(url, appConfig)
+		return captured.map { appRequest ->
+			InterceptedRequest(
+				url = appRequest.url,
+				method = appRequest.method,
+				headers = appRequest.headers,
+				timestamp = appRequest.timestamp,
+				body = appRequest.body,
+			)
+		}
+	}
+
+	override suspend fun captureWebViewUrls(
+		pageUrl: String,
+		urlPattern: Regex,
+		timeout: Long,
+	): List<String> {
+		return webViewRequestInterceptorExecutor.captureWebViewUrls(pageUrl, urlPattern, timeout)
+	}
 }

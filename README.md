@@ -7,10 +7,10 @@
 
 <div align="center">
 
-**[Kotatsu](https://github.com/KotatsuApp/Kotatsu) is a free and open-source manga reader for Android with built-in
+**[Kotatsu-Undo](https://github.com/DrShahzad784/Kotatsu-Undo) is a free and open-source manga reader for Android with built-in
 online content sources.**
 
-![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsuApp%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/KotatsuApp/kotatsu-parsers) [![weblate](https://hosted.weblate.org/widgets/kotatsu/-/strings/svg-badge.svg)](https://hosted.weblate.org/engage/kotatsu/) [![Discord](https://img.shields.io/discord/898363402467045416?color=5865f2&label=discord)](https://discord.gg/NNJ5RgVBC5) [![Telegram](https://img.shields.io/badge/chat-telegram-60ACFF?)](https://t.me/kotatsuapp) [![License](https://img.shields.io/github/license/KotatsuApp/Kotatsu)](https://github.com/KotatsuApp/Kotatsu/blob/devel/LICENSE)
+![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsuApp%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/KotatsuApp/kotatsu-parsers) [![weblate](https://hosted.weblate.org/widgets/kotatsu/-/strings/svg-badge.svg)](https://hosted.weblate.org/engage/kotatsu/) [![Discord](https://img.shields.io/discord/898363402467045416?color=5865f2&label=discord)](https://discord.gg/NNJ5RgVBC5) [![Telegram](https://img.shields.io/badge/chat-telegram-60ACFF?)](https://t.me/+RtXEsIbm219hN2Y0) [![License](https://img.shields.io/github/license/DrShahzad784/Kotatsu-Undo)](https://github.com/DrShahzad784/Kotatsu-Undo/blob/devel/LICENSE)
 
 ### Main Features
 
@@ -55,7 +55,7 @@ online content sources.**
 <img src="https://hosted.weblate.org/widget/kotatsu/horizontal-auto.png" alt="Translation status" />
 </a>
 
-**[Kotatsu](https://github.com/KotatsuApp/Kotatsu) is localized in a number of different languages.**<br>
+**[Kotatsu-Undo](https://github.com/DrShahzad784/Kotatsu-Undo) is localized in a number of different languages.**<br>
 **📌 If you would like to help improve these or add new languages,
 please head over to the [Weblate project page](https://hosted.weblate.org/engage/kotatsu/)**
 
@@ -63,10 +63,10 @@ please head over to the [Weblate project page](https://hosted.weblate.org/engage
 
 <br>
 
-<a href="https://github.com/KotatsuApp/Kotatsu">
+<a href="https://github.com/DrShahzad784/Kotatsu-Undo">
   <picture>
-    <source srcset="https://github-readme-stats.vercel.app/api/pin/?username=KotatsuApp&repo=Kotatsu&bg_color=0d1117&text_color=1976d2&title_color=1976d2&icon_color=0877d2&border_radius=10&description_lines_count=2&show_owner=true" media="(prefers-color-scheme: dark)">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=KotatsuApp&repo=Kotatsu&text_color=1976d2&title_color=1976d2&icon_color=0877d2&border_radius=10&description_lines_count=2&show_owner=true" alt="Kotatsu GitHub Repository">
+    <source srcset="https://github-readme-stats.vercel.app/api/pin/?username=DrShahzad784&repo=Kotatsu-Undo&bg_color=0d1117&text_color=1976d2&title_color=1976d2&icon_color=0877d2&border_radius=10&description_lines_count=2&show_owner=true" media="(prefers-color-scheme: dark)">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=DrShahzad784&repo=Kotatsu-Undo&text_color=1976d2&title_color=1976d2&icon_color=0877d2&border_radius=10&description_lines_count=2&show_owner=true" alt="Kotatsu-Undo GitHub Repository">
   </picture>
 </a>
 <a href="https://github.com/KotatsuApp/Kotatsu-parsers">
@@ -79,7 +79,7 @@ please head over to the [Weblate project page](https://hosted.weblate.org/engage
 </br>
 
 **📌 Pull requests are welcome, if you want:
-See [CONTRIBUTING.md](https://github.com/KotatsuApp/Kotatsu/blob/devel/CONTRIBUTING.md) for the guidelines**
+See [CONTRIBUTING.md](https://github.com/DrShahzad784/Kotatsu-Undo/blob/devel/CONTRIBUTING.md) for the guidelines**
 
 ### Certificate fingerprints
 
