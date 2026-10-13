@@ -10,7 +10,7 @@
 **[Kotatsu-Undo](https://github.com/DrShahzad784/Kotatsu-Undo) is a free and open-source manga reader for Android with built-in
 online content sources.**
 
-![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsuApp%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/KotatsuApp/kotatsu-parsers) [![weblate](https://hosted.weblate.org/widgets/kotatsu/-/strings/svg-badge.svg)](https://hosted.weblate.org/engage/kotatsu/) [![Discord](https://img.shields.io/discord/898363402467045416?color=5865f2&label=discord)](https://discord.gg/NNJ5RgVBC5) [![Telegram](https://img.shields.io/badge/chat-telegram-60ACFF?)](https://t.me/+RtXEsIbm219hN2Y0) [![License](https://img.shields.io/github/license/DrShahzad784/Kotatsu-Undo)](https://github.com/DrShahzad784/Kotatsu-Undo/blob/devel/LICENSE)
+![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen) [![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FKotatsuApp%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C)](https://github.com/KotatsuApp/kotatsu-parsers) [![weblate](https://hosted.weblate.org/widgets/kotatsu/-/strings/svg-badge.svg)](https://hosted.weblate.org/engage/kotatsu/) [![Discord](https://img.shields.io/discord/898363402467045416?color=5865f2&label=discord)](https://discord.gg/NNJ5RgVBC5) [![Telegram](https://img.shields.io/badge/chat-telegram-60ACFF?)](https://t.me/+RtXEsIbm219hN2Y0) [![License](https://img.shields.io/github/license/DrShahzad784/Kotatsu-Undo)](LICENSE)
 
 ### Main Features
 
@@ -96,6 +96,8 @@ See [CONTRIBUTING.md](https://github.com/DrShahzad784/Kotatsu-Undo/blob/devel/CO
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
 <div align="left">
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 You may copy, distribute and modify the software as long as you track changes/dates in source files. Any modifications
 to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build &
