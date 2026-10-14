@@ -17,9 +17,15 @@ pluginManagement {
 		}
 	}
 }
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
 dependencyResolutionManagement {
 	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 	repositories {
+		// Locally published kotatsu-parsers-redo (org.koitharu:kotatsu-parsers:1.0),
+		// produced by `./gradlew publishToMavenLocal` in the kotatsu-parsers-redo checkout.
+		mavenLocal()
 		google()
 		mavenCentral()
 		maven {

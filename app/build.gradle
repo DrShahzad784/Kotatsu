@@ -87,7 +87,10 @@ android {
 				'META-INF/**/*.txt'
 			]
 		}
-	}
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
 	sourceSets {
 		androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
 		main.java.srcDirs += 'src/main/kotlin/'
@@ -139,14 +142,16 @@ android {
 	}
 }
 dependencies {
-	def parsersVersion = libs.versions.parsers.get()
-	if (System.properties.containsKey('parsersVersionOverride')) {
-		// usage:
-		// -DparsersVersionOverride=$(curl -s https://api.github.com/repos/kotatsuapp/kotatsu-parsers/commits/master -H "Accept: application/vnd.github.sha" | cut -c -10)
-		parsersVersion = System.getProperty('parsersVersionOverride')
-	}
-	//noinspection UseTomlInstead
-	implementation("com.github.clquwu:kotatsu-parsers-redo:$parsersVersion") {
+	// Parsers come from the locally published kotatsu-parsers-redo artifact so that local
+	// parser changes (e.g. the MangaBall fixes) are picked up. mavenLocal() is registered
+	// in settings.gradle; publish it from the parser checkout with:
+	//   ./gradlew publishToMavenLocal
+	// To use the JitPack build instead, replace with:
+	//   implementation("com.github.clquwu:kotatsu-parsers-redo:${libs.versions.parsers.get()}") {
+	//       exclude group: 'org.json', module: 'json'
+	//   }
+	//NoUseTomlInstead
+	implementation("org.koitharu:kotatsu-parsers:1.0") {
 		exclude group: 'org.json', module: 'json'
 	}
 
